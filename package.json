@@ -6,9 +6,9 @@
   "scripts": {
     "test-node": "tape test/index.js | tap-format-spec",
     "test": "testling | tap-format-spec",
-    "bundle": "node_modules/.bin/browserify index.js > dist/tinyemitter.js -s TinyEmitter && echo 'Bundled'",
+    "bundle": "node_modules/.bin/browserify cjs/index.js > dist/tinyemitter.js -s TinyEmitter && echo 'Bundled'",
     "minify": "node_modules/.bin/uglifyjs dist/tinyemitter.js -o dist/tinyemitter.min.js -m && echo 'Minified'",
-    "build": "npm test && npm run bundle && npm run minify",
+    "build": "rollup --config ; npm test && npm run bundle && npm run minify",
     "size": "node_modules/.bin/uglifyjs index.js -o minified.js -m && ls -l && rm minified.js"
   },
   "repository": {
@@ -31,6 +31,7 @@
   "devDependencies": {
     "@tap-format/spec": "0.2.0",
     "browserify": "11.2.0",
+    "rollup": "^0.67.0",
     "tape": "4.2.1",
     "testling": "1.7.1",
     "uglify-js": "2.5.0"

@@ -1,5 +1,6 @@
-var Emitter = require('../index');
-var emitter = require('../instance');
+
+var emitter = require('../cjs/instance');
+var Emitter = require('../cjs/index');
 var test = require('tape');
 
 test('subscribes to an event', function (t) {
@@ -210,8 +211,4 @@ test('unsubscribes single event with name and callback which was subscribed once
   t.end();
 });
 
-test('exports an instance', function (t) {
-  t.ok(emitter, 'exports an instance')
-  t.ok(emitter instanceof Emitter, 'an instance of the Emitter class');
-  t.end();
-});
+

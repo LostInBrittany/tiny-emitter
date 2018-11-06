@@ -1,2 +1,3 @@
-var E = require('./index.js');
-module.exports = new E();
+import Emitter from './index';
+
+export default new Emitter();
